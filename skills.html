@@ -12,19 +12,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="lightPurp">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top darkPurple">
         <div class="container">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="me.html" class="nav-link">Me</a></li>
-            </ul>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="me.html" class="nav-link">Me</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <div class="developTools bg-secondary text-white py-5 lightBlue mono" style="margin-top: 6vh;">
+    <div class="developTools bg-secondary text-white py-5 lightBlue mono fade-in" style="margin-top: 6vh;">
         <div class="container text-center">
             <h1 class="skillsMainTxt mb-4">Skills</h1>
             <h3 class="developSkills mb-5">Development Skills</h3>
@@ -33,14 +38,14 @@
                     <div class="developProgramsContainer text-center">
                         <img src="assets/html.png" alt="HTML" class="img-fluid mb-2">
                         <h5 class="textBelow">HTML</h5>
-                        <p class="smallerText">Ik structureer webpagina’s.</p>
+                        <p class="smallerText">Ik structureer webpagina's.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="developProgramsContainer text-center">
                         <img src="assets/css.png" alt="CSS" class="img-fluid mb-2">
                         <h5 class="textBelow">CSS</h5>
-                        <p class="smallerText">Ik stijl en vormgeef webpagina’s.</p>
+                        <p class="smallerText">Ik stijl en vormgeef webpagina's.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -111,16 +116,16 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="developProgramsContainer text-center">
-                        <img src="assets/1_5Hnnv0awfSv0BGcq1C522w.png" alt="php_mmyadmin" class="img-fluid mb-2">
-                        <h5 class="textBelow">PHP my admin</h5>
-                        <p class="smallerText">databases bijhouden.</p>
+                        <img src="assets/laravel.png" alt="Laravel" class="img-fluid mb-2">
+                        <h5 class="textBelow">Laravel</h5>
+                        <p class="smallerText">Ik beheer databases en bouw backends met Laravel.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="designTools bg-light py-5 lightPurp mono">
+    <div class="designTools bg-light py-5 lightPurp mono fade-in">
         <div class="container text-center">
             <h3 class="designSkills mb-5">Design Skills</h3>
 
@@ -157,7 +162,7 @@
                     <div class="designProgramsContainer text-center">
                         <img src="assets/pr.png" alt="Adobe Illustrator" class="img-fluid mb-2">
                         <h5 class="textBelow">Adobe Premiere Pro</h5>
-                        <p class="smallerText">Ik bewerk en monteer video’s.
+                        <p class="smallerText">Ik bewerk en monteer video's.
                         </p>
                     </div>
                 </div>
@@ -169,12 +174,11 @@
                     </div>
                 </div>
                 
-                <!-- Add more items as needed -->
             </div>
         </div>
     </div>
 
-    <div class="overigTools bg-light py-5 lightBlue mono">
+    <div class="overigTools bg-light py-5 lightBlue mono fade-in">
         <div class="container text-center">
             <h3 class="overigSkills mb-5">Overige Skills</h3>
             <div class="row">
@@ -203,7 +207,7 @@
         </div>
     </div>
 
-    <footer class="bg-dark text-white py-3 darkPurple">
+    <footer class="bg-dark text-white py-4 darkPurple" style="margin-top: 0px;">
         <div class="container text-center">
                <a href="https://www.linkedin.com/in/simone-storm-3214b5294/" target="_blank"><img src="assets/linked.png" alt="LinkedIn" class="social-icon"></a>
             <a href="https://www.instagram.com/simone_stormpie/" target="_blank"><img src="assets/insta.png" alt="Instagram" class="social-icon"></a>
@@ -212,10 +216,24 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+    // Fade-in on scroll
+    function onScrollFadeIn() {
+      const fadeEls = document.querySelectorAll('.fade-in');
+      fadeEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 60) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', onScrollFadeIn);
+    window.addEventListener('DOMContentLoaded', onScrollFadeIn);
+    </script>
 </body>
 
 </html>

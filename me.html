@@ -11,34 +11,62 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="lightBlue">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top darkPurple">
         <div class="container">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="me.html" class="nav-link">Me</a></li>
-            </ul>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="me.html" class="nav-link">Me</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
-    <div class="colorContainer position-relative">
-        <img src="assets/me.png" class="image" alt="Me">
-        <div class="overlay-text">
-            <p class="upperText">Mijn naam is Simone, een creatieve coder met een passie voor design en technologie. Mijn liefde voor tekenen en visuele vormgeving inspireert me in alles wat ik creëer. <br><br> Met expertise in coding en tools zoals Photoshop, Illustrator en XD ontwikkel ik digitale ervaringen die niet alleen functioneel, maar ook visueel krachtig zijn. <br><br> Of het nu gaat om het bouwen van een website, het ontwerpen van een logo of het verfijnen van een merkidentiteit, ik zet mijn vaardigheden in om jouw visie tot leven te brengen. <br><br> Laten we samen iets unieks en gedenkwaardigs creëren met de perfecte mix van code en design!</p>
-         
+    <main>
+        <div class="container-fluid" style="padding-top: 90px; padding-bottom: 40px;">
+            <div class="d-flex flex-row align-items-center justify-content-center flex-wrap flex-md-nowrap" style="min-height: 100vh;">
+                <div class="me-img-side d-flex justify-content-center align-items-center" style="flex:0 0 45vw; max-width:600px; min-height:320px; padding-left:5vw;">
+                    <img src="assets/me.png" alt="Me" class="img-fluid" style="height:80vh; max-height:90vh; width:auto; max-width:100%; border-radius:50px; object-fit:contain;">
+                </div>
+                <div class="me-text-side d-flex align-items-center justify-content-center" style="flex:1; min-width: 260px; height: 70vh;">
+                    <div class="overlay-text w-100 mx-auto" style="max-width: 500px; margin-left: 0;">
+                        <p class="upperText" style="font-size: 1.2rem; text-align: left;">
+                            Mijn naam is Simone, een creatieve coder met een passie voor design en technologie. Mijn liefde voor tekenen en visuele vormgeving inspireert me in alles wat ik creëer.<br><br>
+                            Met expertise in coding en tools zoals Photoshop, Illustrator en XD ontwikkel ik digitale ervaringen die niet alleen functioneel, maar ook visueel krachtig zijn.<br><br>
+                            Of het nu gaat om het bouwen van een website, het ontwerpen van een logo of het verfijnen van een merkidentiteit, ik zet mijn vaardigheden in om jouw visie tot leven te brengen.<br><br>
+                            Laten we samen iets unieks en gedenkwaardigs creëren met de perfecte mix van code en design!
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <footer class="bg-dark text-white py-3 darkPurple">
+    </main>
+    <footer class="bg-dark text-white py-4 darkPurple" style="margin-top: 0px;">
         <div class="container text-center">
             <a href="https://www.linkedin.com/in/simone-storm-3214b5294/" target="_blank"><img src="assets/linked.png" alt="LinkedIn" class="social-icon"></a>
             <a href="https://www.instagram.com/simone_stormpie/" target="_blank"><img src="assets/insta.png" alt="Instagram" class="social-icon"></a>
             <a href="https://www.reddit.com/user/STORMtrooper376/" target="_blank"><img src="assets/redd.png" alt="Reddit" class="social-icon"></a>
             <a href="https://github.com/Malachite0" target="_blank"><img src="assets/git.png" alt="GitHub" class="social-icon"></a>
+        </div>
     </footer>
-
-    <!-- Bootstrap JS and dependencies -->
+    <script>
+    function onScrollFadeIn() {
+      const fadeEls = document.querySelectorAll('.fade-in');
+      fadeEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 60) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', onScrollFadeIn);
+    window.addEventListener('DOMContentLoaded', onScrollFadeIn);
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
